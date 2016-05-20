@@ -1,0 +1,6 @@
+---
+# Override memcached settings
+memcached_servers: 127.0.0.1
+
+# Override glance role_name
+glance_rolename: openstack-ansible-os_glance

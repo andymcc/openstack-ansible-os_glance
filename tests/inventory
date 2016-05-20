@@ -1,7 +1,7 @@
 [all]
 localhost ansible_connection=local ansible_become=True
-infra1 ansible_host=10.100.100.2 ansible_become=True ansible_user=root
-openstack1 ansible_host=10.100.100.3 ansible_become=True ansible_user=root
+infra1 ansible_ssh_host=10.100.100.2 ansible_host=10.100.100.2 ansible_become=True ansible_user=root
+openstack1 ansible_ssh_host=10.100.100.2 ansible_host=10.100.100.3 ansible_become=True ansible_user=root
 
 [all_containers]
 infra1
@@ -22,3 +22,5 @@ openstack1
 
 [glance_all]
 openstack1
+
+[utility_all]

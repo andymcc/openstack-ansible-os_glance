@@ -13,20 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Prepare the user ssh keys
-- include: test-prepare-keys.yml
+# Prepare the hosts
+- include: playbooks/test-setup-host.yml
 
-# Prepare the host
-- include: test-prepare-host.yml
+# Install galera
+- include: playbooks/test-install-galera.yml
 
-# Prepare the containers
-- include: test-prepare-containers.yml
-
-# Install RabbitMQ/MariaDB
-- include: test-install-infra.yml
+# Install rabbitmq
+- include: playbooks/test-install-rabbitmq.yml
 
 # Install Keystone
-- include: test-install-keystone.yml
+- include: playbooks/test-install-keystone.yml
 
 # Install Glance
-- include: test-install-glance.yml
+- include: playbooks/test-install-glance.yml
+
+# Test Glance
+- include: test-glance-functional.yml
